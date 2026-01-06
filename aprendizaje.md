@@ -99,3 +99,32 @@ electroapp-landing/
 ├── style.css
 ├── aprendizaje.md
 └── README.md (lo crearemos ahora)
+
+# Semana 1 - Resumen
+
+## Lo que construí:
+Una landing page funcional en producción con:
+- Formulario de registro
+- Diseño responsive
+- Deploy automático
+- 100% funcional
+
+## Tecnologías dominadas:
+- HTML5 (estructura semántica)
+- CSS3 (flexbox, media queries, pseudo-clases)
+- JavaScript (DOM, eventos, validación)
+- Git (commits, branches, push)
+- GitHub (repositorio público)
+- Vercel (deploy, dominios)
+
+## Métricas:
+- Líneas de código: ~200
+- Commits en GitHub: [contar]
+- Horas invertidas: ~13h
+- URL en producción: [tu-url]
+
+## Lo que me sorprendió:
+[¿Qué fue más fácil/difícil de lo que esperabas?]
+
+## Próxima semana:
+Voy a empezar con React para hacer componentes reutilizables

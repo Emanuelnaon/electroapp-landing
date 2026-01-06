@@ -24,22 +24,17 @@
             <h2>Próximamente</h2>
             <p>Dejá tu email para ser de los primeros en probarlo:</p>
 
-           <form action="https://formspree.io/f/meeobonz" method="POST">
-               <input type="email" name="email" placeholder="tu@email.com" required>
-               <button type="submit">Unirme a la lista de espera</button>
-            </form>
+         <form action="https://formspree.io/f/meeobonz" method="POST">
+            <input type="hidden" name="_next" value="gracias.html">
+            <input type="email" name="email" placeholder="tu@email.com" required>
+            <button type="submit">Unirme a la lista de espera</button>
+         </form>
          </section>
       </main>
       
       <footer>
          <p>© 2026 ElectroApp - Hecho por electricistas, para electricistas</p>
       </footer>
-   <script>const form = document.querySelector('form');
-      form.addEventListener('submit', function() {
-      const button = document.querySelector('button');
-      button.textContent = 'Enviando...';
-      button.disabled = true;
-      });
-   </script>
+   
 </body>
 </html>
