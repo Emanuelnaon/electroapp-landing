@@ -3,6 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="CRM gratuito para electricistas profesionales. Armá presupuestos en minutos.">
    <title>ElectroApp - CRM para Electricistas</title>
    <link rel="stylesheet" href="style.css">
 </head>
@@ -25,17 +26,109 @@
             <h2>Próximamente</h2>
             <p>Dejá tu email para ser de los primeros en probarlo:</p>
 
-         <form action="https://formspree.io/f/meeobonz" method="POST">
-            <input type="hidden" name="_next" value="https://electroapp-landing.vercel.app/gracias.html">
-            <input type="email" name="email" placeholder="tu@email.com" required>
-            <button type="submit">Unirme a la lista de espera</button>
-         </form>
+            <form id="waitlist-form">
+                <input 
+                    type="email" 
+                    id="email-input" 
+                    placeholder="tu@email.com" 
+                    required
+                    autocomplete="email"
+                >
+                <button type="submit" id="submit-btn">
+                    Unirme a la lista de espera
+                </button>
+            </form>
+            
+            <div id="success-message" style="display: none;">
+                ✅ ¡Listo! Te avisaremos cuando esté listo.
+            </div>
          </section>
       </main>
       
       <footer>
+         <p id="counter">0 electricistas ya se anotaron</p>
          <p>© 2026 ElectroApp - Hecho por electricistas, para electricistas</p>
       </footer>
-   
+
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const emailInput = document.getElementById('email-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('success-message');
+        const counter = document.getElementById('counter');
+
+        // Función para contar emails guardados
+        function updateCounter() {
+            const emails = Object.keys(localStorage).filter(key => 
+                key.startsWith('electroapp_email_')
+            );
+            counter.textContent = `${emails.length} electricista${emails.length !== 1 ? 's' : ''} ya se anotaron`;
+        }
+
+        // Actualizar contador al cargar
+        updateCounter();
+
+        // Manejar envío del formulario
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            
+            // Validación básica
+            if (!email || !email.includes('@')) {
+                alert('Por favor ingresá un email válido');
+                return;
+            }
+
+            // Verificar duplicados
+            const emails = Object.keys(localStorage).filter(key => 
+                key.startsWith('electroapp_email_')
+            );
+            const exists = emails.some(key => 
+                localStorage.getItem(key) === email
+            );
+
+            if (exists) {
+                successMessage.textContent = '📧 Este email ya está en la lista de espera';
+                successMessage.style.color = '#f59e0b';
+                successMessage.style.display = 'block';
+                emailInput.value = '';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+                return;
+            }
+
+            // Deshabilitar botón mientras "procesa"
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
+            // Simular delay de red (para que se sienta profesional)
+            setTimeout(() => {
+                // Guardar en localStorage
+                localStorage.setItem('electroapp_email_' + Date.now(), email);
+                
+                // Limpiar input
+                emailInput.value = '';
+                
+                // Mostrar mensaje de éxito
+                successMessage.textContent = '✅ ¡Listo! Te avisaremos cuando esté listo.';
+                successMessage.style.color = '#10b981';
+                successMessage.style.display = 'block';
+                
+                // Actualizar contador
+                updateCounter();
+                
+                // Restaurar botón
+                submitBtn.textContent = 'Unirme a la lista de espera';
+                submitBtn.disabled = false;
+                
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 800);
+        });
+    </script>
 </body>
 </html>

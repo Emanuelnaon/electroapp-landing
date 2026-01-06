@@ -1,5 +1,5 @@
 body {
-         font-family: 'Courier New', Courier, monospace;
+         font-family: 'Segoe UI', monospace, Tahoma, Geneva, sans-serif;
          margin: 0;
          padding: 0;
          background-color: #dee7ef;
@@ -74,4 +74,40 @@ form {
 button {
     width: 100%;
 }
+}
+
+/* Estilos para el mensaje de éxito */
+#success-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el contador */
+#counter {
+    font-weight: bold;
+    color: #2563eb;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Mejorar el estado disabled del botón */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
