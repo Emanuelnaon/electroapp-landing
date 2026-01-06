@@ -1,130 +1,41 @@
-# Dia 1 - Lunes
-
-## Lo que aprendí:
-- HTML es la estructura de un documento web
-- Los tags más importantes son: 'head, body, title, h1, p, a, div, input, button, img'
-- La diferencia entre header, main y footer es que el primero se encuentra en la parte superior del documento, el segundo en el centro y el tercero en la parte inferior.
-- Los tags 'a' son para crear un link y los tags 'img' son para crear una imagen.
-- El tag 'input' sirve para crear un campo de texto, el tag 'button' sirve para crear un botón y el tag 'img' sirve para crear una imagen.
-- Los tags 'h1' para titulo, y p para parrafos.
-
-##Lo que me costó:
--aun nada
-
-## La proxima:
-aprender css
-
-# Día 2 - Martes
-
-## Lo que aprendí:
-- CSS controla los colores, tamaños y espaciados
-- Puedo usar :hover y :focus para interactividad
-- @media query hace que mi sitio sea responsive
-
-## Decisiones de diseño:
-- Usé azul (#2563eb) porque transmite profesionalismo
-- Bordes redondeados (border-radius) para look moderno
-
-## Lo que me costó:
-[Escribí aquí]
-
-# Día 3 - Miércoles
-
-## Lo que aprendí:
-- JavaScript escucha eventos (como submit)
-- localStorage guarda datos en el navegador
-- setTimeout crea delays (para simular procesos)
-
-## Mi primer bug:
-- el alert no salio, estaba mal ubicado
-
-## Lo que quiero mejorar:
-- usar alerts
-```
-
 ---
 
-## 🗓️ JUEVES (1.5 horas) - Validación y Mejoras
+# 🎉 SEMANA 1 - RESUMEN FINAL
 
-### 🧠 CONCEPTO (10 minutos)
+## Proyecto completado
+✅ Landing page funcional en producción
+✅ URL: https://electroapp-landing.vercel.app
+✅ Repositorio: https://github.com/[mi-usuario]/electroapp-landing
 
-**Hoy NO aprendemos tecnología nueva.** Hoy PULIMOS lo que ya tenemos.
-
-**Filosofía del buen desarrollador:**
-```
-Código que funciona !== Código de calidad
-
-Código de calidad = Funciona + Es legible + Maneja errores
-
-# Día 4 - Jueves
-
-## Lo que aprendí:
-- Validar inputs antes de guardar datos
-- Crear elementos HTML con JavaScript (createElement)
-- Comentar código para el futuro
-
-## Mejoras implementadas:
-- ✅ Validación de email
-- ✅ Prevenir duplicados
-- ✅ Contador de interesados
-
-## Estado actual:
-Mi landing page está funcional y lista para mostrar
-```
-
----
-
-## 🗓️ VIERNES (1 hora) - Preparación para Deploy
-
-### 🧠 CONCEPTO (10 minutos)
-
-**Hoy es el día cero del "mundo real".**
-
-Hasta ahora tu proyecto solo existe en tu computadora. Hoy vamos a prepararlo para que:
-1. Esté en GitHub (tu portafolio público)
-2. Esté respaldado (si se rompe tu compu, no perdés nada)
-3. Esté listo para el deploy del sábado
-
----
-
-### 💻 PRÁCTICA (45 minutos)
-
-**PASO 1: Organizar la estructura de archivos (10 minutos)**
-
-Tu carpeta debería verse así:
-```
-electroapp-landing/
-│
-├── index.html
-├── style.css
-├── aprendizaje.md
-└── README.md (lo crearemos ahora)
-
-# Semana 1 - Resumen
-
-## Lo que construí:
-Una landing page funcional en producción con:
-- Formulario de registro
-- Diseño responsive
-- Deploy automático
-- 100% funcional
-
-## Tecnologías dominadas:
+## Tecnologías aprendidas
 - HTML5 (estructura semántica)
-- CSS3 (flexbox, media queries, pseudo-clases)
-- JavaScript (DOM, eventos, validación)
-- Git (commits, branches, push)
+- CSS3 (flexbox, responsive, animaciones)
+- JavaScript (eventos, DOM, localStorage)
+- Git (versionado de código)
 - GitHub (repositorio público)
-- Vercel (deploy, dominios)
+- Vercel (deploy automático)
 
-## Métricas:
-- Líneas de código: ~200
-- Commits en GitHub: [contar]
-- Horas invertidas: ~13h
-- URL en producción: [tu-url]
+## Líneas de código escritas
+~250 líneas funcionales
 
-## Lo que me sorprendió:
-[¿Qué fue más fácil/difícil de lo que esperabas?]
+## Bugs resueltos
+1. Input no se vaciaba después de submit
+2. Botón quedaba en "Enviando..." después de volver de Formspree
+3. Redirección de Formspree no funcionaba
 
-## Próxima semana:
-Voy a empezar con React para hacer componentes reutilizables
+## Decisiones técnicas importantes
+- ❌ Rechazamos Formspree (UX pobre, bucles innecesarios)
+- ✅ Implementamos JavaScript puro (0 dependencias)
+- ✅ Decidimos usar Supabase en Semana 3 (después de analizar Sheets vs Supabase)
+
+## Lo más difícil de la semana
+[Escribí lo que más te costó]
+
+## Lo más satisfactorio
+[Escribí lo que más te gustó lograr]
+
+## Siguiente objetivo
+Semana 2: Aprender React y migrar la landing page a componentes reutilizables
+
+## Reflexión personal
+[Escribí cómo te sentís después de completar la Semana 1]
