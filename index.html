@@ -24,9 +24,9 @@
             <h2>Próximamente</h2>
             <p>Dejá tu email para ser de los primeros en probarlo:</p>
 
-            <form>
-                <input type="email" placeholder="tu@email.com" required>
-                <button type="submit">Unirme a la lista de espera</button>
+           <form action="https://formspree.io/f/meeobonz" method="POST">
+               <input type="email" name="email" placeholder="tu@email.com" required>
+               <button type="submit">Unirme a la lista de espera</button>
             </form>
          </section>
       </main>
@@ -34,79 +34,12 @@
       <footer>
          <p>© 2026 ElectroApp - Hecho por electricistas, para electricistas</p>
       </footer>
-   <script>
-   // Seleccionar el formulario 
-   const form = document.querySelector('form');
-
-   // Función para contar cuántos emails hay guardados
-function mostrarContador() {
-    const emailsGuardados = Object.keys(localStorage).filter(key => 
-        key.startsWith('email_')
-    );
-    const cantidad = emailsGuardados.length;
-    
-    // Buscar el footer
-    const footer = document.querySelector('footer');
-    
-    // Crear un nuevo elemento
-    const contador = document.createElement('p');
-    contador.style.fontSize = '18px';
-    contador.style.fontWeight = 'bold';
-    contador.style.color = '#2563eb';
-    contador.textContent = cantidad + ' electricistas ya se anotaron';
-    
-    // Insertarlo ANTES del copyright
-    footer.insertBefore(contador, footer.firstChild);
-}
-
-// Llamar la función cuando carga la página
-mostrarContador();
-// Función para guardar los emails en localStorage
-
-// Manejar el envío del formulario
-     form.addEventListener('submit', function(evento) {
-    evento.preventDefault();
-    // Obtener el valor del input
-    const emailInput = document.querySelector('input[type="email"]');
-    const email = emailInput.value.trim(); // trim() elimina espacios
-    
-    // Validación 1: ¿Está vacío?
-    if (email === '') {
-        alert('Por favor, ingresá tu email');
-        return; // Salir de la función
-    }
-    
-    // Validación 2: ¿Tiene formato válido?
-    if (!email.includes('@') || !email.includes('.')) {
-        alert('Por favor, ingresá un email válido (ej: juan@gmail.com)');
-        return;
-    }
-    
-    // Validación 3: ¿Ya se registró antes?
-    const emailsGuardados = Object.keys(localStorage);
-    const yaExiste = emailsGuardados.some(key => 
-        localStorage.getItem(key) === email
-    );
-    // Si ya existe, mostrar alerta
-    if (yaExiste) {
-        alert('Este email ya está en la lista de espera 😊');
-        return;
-    }
-    
-    // Si pasó todas las validaciones, guardar
-    const button = document.querySelector('button');
-    button.textContent = 'Enviando...';
-    button.disabled = true;
-    
-    setTimeout(function() {// Simular retardo de 1 segundo
-        localStorage.setItem('email_' + Date.now(), email);// Usar timestamp como clave
-        alert("¡Listo! Te avisaremos cuando esté listo 🚀");// Mostrar mensaje de éxito
-        emailInput.value = '';// Limpiar el campo
-        button.textContent = 'Unirme a la lista de espera';// Restaurar texto del botón
-        button.disabled = false;// Habilitar el botón
-        location.reload(); // Recargar la página para actualizar el contador
-    }, 1000);
-});
+   <script>const form = document.querySelector('form');
+      form.addEventListener('submit', function() {
+      const button = document.querySelector('button');
+      button.textContent = 'Enviando...';
+      button.disabled = true;
+      });
    </script>
 </body>
 </html>
